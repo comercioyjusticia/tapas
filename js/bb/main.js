@@ -42,6 +42,14 @@
           window.fullDates = data;
         });
 
+      // last available day
+      var lista = Object.keys(fullDates);
+      window.lastYear = lista[lista.length-1];
+      var lista = Object.keys(fullDates[lastYear]);
+      window.lastMonth = lista[lista.length-1];
+      var lista = fullDates[lastYear][lastMonth];
+      window.lastDay = lista[lista.length-1];
+
       App.Models.dates = new DatesM({}); 
       App.Views.dates = new DatesV({model: App.Models.dates});
       App.Views.dates.render();
