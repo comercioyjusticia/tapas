@@ -12,9 +12,17 @@ App.Router = Backbone.Router.extend({
         $(document).attr('title', 'Las tapas del diario Comercio y Justicia');
 
         // load last day
+        /*
         App.Models.dia = new DiaM({anio: lastYear, mes: lastMonth, dia: lastDay}); 
         App.Views.dia = new DiaV({model: App.Models.dia});
         App.Views.dia.render();
+        */
+
+        // load last month
+        App.Models.mes = new MesM({anio: lastYear, mes: lastMonth}); 
+        App.Views.mes = new MesV({model: App.Models.mes});
+        App.Views.mes.render();
+
 
         touchAnalytics('/', 'Home');
         refreshImages();
