@@ -54,3 +54,13 @@
   window.diasGbl= {'0': "Dom", '1': "Lun", '2': "Mar", '3': "Mie", '4': "Jue", 
           '5': "Vie", '6': "Sab", '7': "Dom"};
   })();
+
+  window.refreshImages = function(){
+    var $container_home = $('#filter-container-feature');
+  
+    $container_home.imagesLoaded( function(){
+      $container_home.isotope({
+        itemSelector : 'li',
+      });
+    });
+  };

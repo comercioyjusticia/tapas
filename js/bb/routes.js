@@ -11,6 +11,7 @@ App.Router = Backbone.Router.extend({
         loadDatesMenu();
         $(document).attr('title', 'Las tapas del diario Comercio y Justicia');
         touchAnalytics('/', 'Home');
+        refreshImages();
         },
 
     mes: function(anio, mes){
@@ -22,6 +23,7 @@ App.Router = Backbone.Router.extend({
         App.Views.mes.render();
 
         touchAnalytics('/mes/' + anio + '/' + mes, mesesGbl[mes] + ' de ' + anio);
+        refreshImages();
     },
 
     dia: function(anio, mes, dia){
@@ -33,6 +35,7 @@ App.Router = Backbone.Router.extend({
         App.Views.dia.render();
 
         touchAnalytics('/mes/' + anio + '/' + mes + '/' + dia , dia + ' de ' + mesesGbl[mes] + ' del ' + anio);
+        refreshImages();
     },
 
 });
