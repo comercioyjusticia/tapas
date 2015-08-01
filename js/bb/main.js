@@ -30,6 +30,18 @@
   window.loadDatesMenu = function(){
       // load dates menu (just one time)
       if (undefined !== App.Models.dates) return false;
+
+      var url = App.Configuration.baseURLPDF + '/map.json';
+      var xhr = $.ajax({
+            url: url,
+            type: 'GET',
+            //data: {data: self.attributes},
+            async: false});
+        
+        xhr.done(function(data){
+          window.fullDates = data;
+        });
+
       App.Models.dates = new DatesM({}); 
       App.Views.dates = new DatesV({model: App.Models.dates});
       App.Views.dates.render();

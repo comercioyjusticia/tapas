@@ -8,14 +8,7 @@ var DatesM = Backbone.Model.extend({
 	// load dates from external service
 	loadDates: function(){
 		var messtr = mesesGbl;
-		this.set('dates', 	{'anios': {
-								'1939': ['10'], 
-								'2008': ['07', '08'], 
-								'2009': ['01', '02', '03'], 
-								'2015': ['01', '06', '07']
-								},
-							 'messtr': messtr,
-							});
+		this.set('dates', 	{'anios': fullDates, 'messtr': messtr});
 	},
 	
 

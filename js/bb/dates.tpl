@@ -4,7 +4,7 @@
         <li>
             <a href='#mes/<%= anio %>/1'><%= anio %><i><b></b></i></a> 
              <ul>
-                <% _.each(meses, function(mes) { %>          
+                <% _.each(meses, function(data, mes) { %>          
                 <li><a href='#mes/<%= anio %>/<%=mes%>'><%=messtr[mes]%></a></li>
                 <% }); %>
             </ul>
