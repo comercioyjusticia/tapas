@@ -10,7 +10,7 @@ $mesesStr = []; # lista de todos los meses "activos"
 for ($anio = 2008; $anio <= 2016; $anio++) {
 	$res[$anio] = [];
 	for ($mes=1; $mes<=12; $mes++){
-		$smes = ($mes<1) ? '0' . $mes : $mes;
+		$smes = ($mes<10) ? '0' . $mes : $mes;
 		$res[$anio][$smes] = [];
 		for ($dia=1; $dia<=31; $dia++){
 			$diaStr = date("Y-m-d", mktime(0, 0, 0, $mes, $dia, $anio));
